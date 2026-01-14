@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pet_service?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml # 可选，如果纯注解可以省略
+  type-aliases-package: com.imis.petmanagebackend.entity
+  global-config:
+    db-config:
+      id-type: auto
+
+file:
+  upload-path: D:\pet-service-platform\pet-manage-backend\upload
