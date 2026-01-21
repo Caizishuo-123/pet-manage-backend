@@ -10,7 +10,7 @@ import lombok.Data;
 /**
  * @TableName service_appointment
  */
-@TableName(value ="service_appointment")
+@TableName(value = "service_appointment")
 @Data
 public class ServiceAppointment {
     private Long id;
@@ -24,6 +24,8 @@ public class ServiceAppointment {
     private Date appointmentTime;
 
     private Integer status;
+
+    private String remark;
 
     private Date createTime;
 

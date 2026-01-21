@@ -11,10 +11,12 @@ import lombok.Data;
 /**
  * @TableName orders
  */
-@TableName(value ="orders")
+@TableName(value = "orders")
 @Data
 public class Orders {
     private Long id;
+
+    private String orderNo;
 
     private Long userId;
 
@@ -23,6 +25,12 @@ public class Orders {
     private BigDecimal totalPrice;
 
     private Integer payStatus;
+
+    private Date payTime;
+
+    private Integer payMethod;
+
+    private String remark;
 
     private Date createTime;
 
