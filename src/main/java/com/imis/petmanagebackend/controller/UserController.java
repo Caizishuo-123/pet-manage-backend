@@ -34,7 +34,7 @@ public class UserController {
         return Result.success(flag);
     }
 
-    @PutMapping("/toggleStatus")
+    @PutMapping("/toggleRole")
     public Result<?> toggleUserRole(@RequestParam Long id, @RequestParam Integer role) {
         boolean flag = userService.toggleUserRole(id,role);
         return Result.success(flag);

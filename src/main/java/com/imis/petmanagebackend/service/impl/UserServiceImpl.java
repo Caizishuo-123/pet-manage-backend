@@ -131,7 +131,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
      */
     private String getRandomAvatar() {
         // 头像编号 1-3
-        int index = new Random().nextInt(3) + 1; // 1~3
+        int index = new Random().nextInt(10); // 0 ~ 9
         // 返回数据库存储的路径，前端访问即可
         return "/img/" + index + ".jpg";
     }
