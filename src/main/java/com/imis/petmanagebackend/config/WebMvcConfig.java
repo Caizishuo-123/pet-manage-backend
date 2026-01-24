@@ -38,11 +38,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
         //  用户上传头像（本地磁盘）
-        registry.addResourceHandler("/img/**")
-                .addResourceLocations("file:" + uploadPath + "/img/");
+        registry.addResourceHandler("/img/head/**")
+                .addResourceLocations("file:" + uploadPath + "/img/head/");
 
         //  默认头像（classpath）
-        registry.addResourceHandler("/img/**")
-                .addResourceLocations("classpath:/static/img/");
+        registry.addResourceHandler("/img/head/**")
+                .addResourceLocations("classpath:/static/img/head/");
     }
 } 

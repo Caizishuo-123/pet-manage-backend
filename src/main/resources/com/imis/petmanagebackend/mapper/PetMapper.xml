@@ -7,6 +7,7 @@
     <resultMap id="BaseResultMap" type="com.imis.petmanagebackend.entity.Pet">
             <id property="id" column="id" />
             <result property="name" column="name" />
+            <result property="image" column="image" />
             <result property="type" column="type" />
             <result property="breed" column="breed" />
             <result property="age" column="age" />
@@ -21,7 +22,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,type,breed,age,gender,
+        id,name,image,type,breed,age,gender,
         health_status,description,source,owner_id,status,
         create_time,update_time
     </sql>

@@ -46,7 +46,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         if (!MD5Util.matches(password, user.getPassword())) {
             throw new BusinessException("密码错误");
         }
-        // 密码校验
+        // 管理员校验
         if (user.getRole() == 1) {
             throw new BusinessException("非管理员登录,无法进入");
         }
