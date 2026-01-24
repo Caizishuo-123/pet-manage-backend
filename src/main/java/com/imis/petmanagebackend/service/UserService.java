@@ -16,7 +16,7 @@ public interface UserService extends IService<User> {
 
     boolean register(User user);
 
-    Page<User> getUserPage(Long id, String username, String phone, Integer page, Integer pageSize);
+    Page<User> getUserPage(Long id, String username, String phone, Integer role, Integer status, Integer page, Integer pageSize);
 
     boolean toggleUserStatus(Long id);
 

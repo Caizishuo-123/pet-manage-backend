@@ -82,11 +82,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     }
 
     @Override
-    public Page<User> getUserPage(Long id, String username, String phone, Integer page, Integer pageSize) {
+    public Page<User> getUserPage(Long id, String username, String phone, Integer role, Integer status, Integer page, Integer pageSize) {
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         if (id != null) queryWrapper.eq(User::getId, id);
         if (username != null && !username.isEmpty()) queryWrapper.like(User::getUsername, username);
         if (phone != null && !phone.isEmpty()) queryWrapper.like(User::getPhone, phone);
+        if (role != null) queryWrapper.eq(User::getRole, role);
+        if (status != null) queryWrapper.eq(User::getStatus, status);
         queryWrapper.orderByAsc(User::getId);
 
         // page = 当前页，pageSize = 每页条数

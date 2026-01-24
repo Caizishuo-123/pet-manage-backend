@@ -30,22 +30,19 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .allowCredentials(true)
                 .maxAge(3600);
     }
-    
+
     /**
      * 静态资源映射
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // 上传文件映射
-        registry.addResourceHandler("/file/**")
-                .addResourceLocations("file:///" + uploadPath);
-        
-//        // 图片资源映射
-//        registry.addResourceHandler("/images/**")
-//                .addResourceLocations("file:///" + imagePath);
-                
-        // 添加默认图片映射
-        registry.addResourceHandler("/images/**")
-                .addResourceLocations("classpath:/static/images/");
+
+        //  用户上传头像（本地磁盘）
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("file:" + uploadPath + "/img/");
+
+        //  默认头像（classpath）
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("classpath:/static/img/");
     }
 } 
