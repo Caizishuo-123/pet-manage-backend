@@ -50,7 +50,7 @@ public class PetController {
   /**
    * 新增宠物
    */
-  @PostMapping
+  @PostMapping("/add")
   public Result<?> addPet(@RequestBody Pet pet) {
     boolean flag = petService.save(pet);
     return flag ? Result.success("新增成功") : Result.fail("新增失败");
@@ -59,7 +59,7 @@ public class PetController {
   /**
    * 修改宠物信息
    */
-  @PutMapping
+  @PutMapping("/update")
   public Result<?> updatePet(@RequestBody Pet pet) {
     if (pet.getId() == null) {
       return Result.fail("宠物ID不能为空");
@@ -71,7 +71,7 @@ public class PetController {
   /**
    * 删除宠物
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deletePet(@PathVariable Long id) {
     boolean flag = petService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");
@@ -80,7 +80,7 @@ public class PetController {
   /**
    * 批量删除宠物
    */
-  @DeleteMapping("/batch")
+  @DeleteMapping("/delete/batch")
   public Result<?> batchDeletePet(@RequestBody List<Long> ids) {
     if (ids == null || ids.isEmpty()) {
       return Result.fail("请选择要删除的宠物");

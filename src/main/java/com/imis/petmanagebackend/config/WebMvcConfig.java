@@ -15,9 +15,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Value("${file.upload-path}")
     private String uploadPath;
 
-//    @Value("${file.image-path}")
-//    private String imagePath;
-
     /**
      * 跨域配置
      */
@@ -40,9 +37,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
         //  用户上传头像（本地磁盘）
         registry.addResourceHandler("/img/head/**")
                 .addResourceLocations("file:" + uploadPath + "/img/head/");
+        // 【新增】宠物图片映射
+        // 映射规则：访问 http://localhost:8081/img/pet/xxx.jpg 
+        // 实际指向：D:\\pet-platform\\...\\upload\\img\\pet\\xxx.jpg
+        registry.addResourceHandler("/img/pet/**")
+                .addResourceLocations("file:" + uploadPath + "/img/pet/");
 
         //  默认头像（classpath）
         registry.addResourceHandler("/img/head/**")
                 .addResourceLocations("classpath:/static/img/head/");
     }
-} 
+}

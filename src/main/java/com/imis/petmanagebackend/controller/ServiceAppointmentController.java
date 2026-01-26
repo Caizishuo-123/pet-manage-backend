@@ -63,7 +63,7 @@ public class ServiceAppointmentController {
   /**
    * 删除预约记录
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deleteAppointment(@PathVariable Long id) {
     boolean flag = serviceAppointmentService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");

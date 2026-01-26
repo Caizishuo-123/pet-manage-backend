@@ -36,7 +36,7 @@ public class CommunityPostController {
   /**
    * 发布公告帖（管理员发帖）
    */
-  @PostMapping
+  @PostMapping("/add")
   public Result<?> addPost(@RequestBody CommunityPost post) {
     // 管理员发帖，type 默认为 2（公告）
     if (post.getType() == null) {
@@ -93,7 +93,7 @@ public class CommunityPostController {
   /**
    * 删除帖子
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deletePost(@PathVariable Long id) {
     boolean flag = communityPostService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");

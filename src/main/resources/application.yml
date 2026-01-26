@@ -16,4 +16,4 @@ mybatis-plus:
       id-type: auto
 
 file:
-  upload-path: D:\pet-service-platform\pet-manage-backend\upload
+  upload-path: d:\pet-platform\pet-manage-backend\upload

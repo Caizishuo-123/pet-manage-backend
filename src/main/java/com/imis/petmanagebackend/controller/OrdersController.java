@@ -65,7 +65,7 @@ public class OrdersController {
   /**
    * 删除订单
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deleteOrder(@PathVariable Long id) {
     boolean flag = ordersService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");

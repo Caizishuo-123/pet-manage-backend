@@ -46,7 +46,7 @@ public class CommentController {
   /**
    * 删除评论
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deleteComment(@PathVariable Long id) {
     boolean flag = commentService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");

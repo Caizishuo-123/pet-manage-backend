@@ -61,7 +61,7 @@ public class AdoptionApplyController {
   /**
    * 删除申请记录
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deleteApply(@PathVariable Long id) {
     boolean flag = adoptionApplyService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");

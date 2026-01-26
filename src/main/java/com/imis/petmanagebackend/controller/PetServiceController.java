@@ -47,7 +47,7 @@ public class PetServiceController {
   /**
    * 新增服务
    */
-  @PostMapping
+  @PostMapping("/add")
   public Result<?> addService(@RequestBody PetService petService) {
     boolean flag = petServiceService.save(petService);
     return flag ? Result.success("新增成功") : Result.fail("新增失败");
@@ -56,7 +56,7 @@ public class PetServiceController {
   /**
    * 修改服务
    */
-  @PutMapping
+  @PutMapping("/update")
   public Result<?> updateService(@RequestBody PetService petService) {
     if (petService.getId() == null) {
       return Result.fail("服务ID不能为空");
@@ -68,7 +68,7 @@ public class PetServiceController {
   /**
    * 删除服务
    */
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/delete/{id}")
   public Result<?> deleteService(@PathVariable Long id) {
     boolean flag = petServiceService.removeById(id);
     return flag ? Result.success("删除成功") : Result.fail("删除失败");
