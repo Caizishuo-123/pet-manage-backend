@@ -27,7 +27,7 @@ public interface AdoptionApplyService extends IService<AdoptionApply> {
    * 审核领养申请
    * 
    * @param id     申请ID
-   * @param status 状态：2-通过 3-拒绝
+   * @param status 状态：2-通过 3-拒绝 4-已完成
    * @return 是否成功
    */
   boolean audit(Long id, Integer status);

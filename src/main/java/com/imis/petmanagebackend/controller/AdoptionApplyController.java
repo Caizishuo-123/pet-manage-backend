@@ -47,15 +47,15 @@ public class AdoptionApplyController {
    * 审核领养申请
    * 
    * @param id     申请ID
-   * @param status 状态：2-通过 3-拒绝
+   * @param status 状态：2-通过 3-拒绝 4-已完成
    */
   @PutMapping("/audit")
   public Result<?> audit(@RequestParam Long id, @RequestParam Integer status) {
-    if (status != 2 && status != 3) {
-      return Result.fail("状态值无效，只能是2(通过)或3(拒绝)");
+    if (status < 2 || status > 4) {
+      return Result.fail("状态值无效，只能是2(通过)、3(拒绝)或4(已完成)");
     }
     boolean flag = adoptionApplyService.audit(id, status);
-    return flag ? Result.success("审核完成") : Result.fail("审核失败");
+    return flag ? Result.success("操作成功") : Result.fail("操作失败");
   }
 
   /**

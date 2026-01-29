@@ -62,6 +62,9 @@ public class AdoptionApplyServiceImpl extends ServiceImpl<AdoptionApplyMapper, A
             map.put("userId", apply.getUserId());
             map.put("petId", apply.getPetId());
             map.put("applyReason", apply.getApplyReason());
+            map.put("deliveryType", apply.getDeliveryType());
+            map.put("address", apply.getAddress());
+            map.put("contactPhone", apply.getContactPhone());
             map.put("status", apply.getStatus());
             map.put("createTime", apply.getCreateTime());
             map.put("updateTime", apply.getUpdateTime());
@@ -93,6 +96,9 @@ public class AdoptionApplyServiceImpl extends ServiceImpl<AdoptionApplyMapper, A
         map.put("userId", apply.getUserId());
         map.put("petId", apply.getPetId());
         map.put("applyReason", apply.getApplyReason());
+        map.put("deliveryType", apply.getDeliveryType());
+        map.put("address", apply.getAddress());
+        map.put("contactPhone", apply.getContactPhone());
         map.put("status", apply.getStatus());
         map.put("createTime", apply.getCreateTime());
         map.put("updateTime", apply.getUpdateTime());

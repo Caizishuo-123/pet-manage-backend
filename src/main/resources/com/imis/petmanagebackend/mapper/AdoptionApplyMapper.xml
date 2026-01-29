@@ -9,13 +9,15 @@
             <result property="userId" column="user_id" />
             <result property="petId" column="pet_id" />
             <result property="applyReason" column="apply_reason" />
+            <result property="deliveryType" column="delivery_type" />
+            <result property="address" column="address" />
+            <result property="contactPhone" column="contact_phone" />
             <result property="status" column="status" />
             <result property="createTime" column="create_time" />
             <result property="updateTime" column="update_time" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,user_id,pet_id,apply_reason,status,create_time,
-        update_time
+        id,user_id,pet_id,apply_reason,delivery_type,address,contact_phone,status,create_time,update_time
     </sql>
 </mapper>

@@ -59,6 +59,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
             map.put("content", comment.getContent());
             map.put("status", comment.getStatus());
             map.put("createTime", comment.getCreateTime());
+            map.put("updateTime", comment.getUpdateTime());
 
             // 获取用户名
             User user = userService.getById(comment.getUserId());

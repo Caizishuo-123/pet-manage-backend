@@ -17,3 +17,11 @@ mybatis-plus:
 
 file:
   upload-path: d:\pet-platform\pet-manage-backend\upload
+
+tencent:
+  cos:
+    secret-id: ${COS_SECRET_ID}               # 替换为你的 SecretId
+    secret-key: ${COS_SECRET_KEY}             # 替换为你的 SecretKey
+    region: ap-guangzhou                      # 替换为你的 Bucket 地域
+    bucketName: cthulhu-1400035022            # 替换为你的 Bucket 名称
+    baseUrl: https://cthulhu-1400035022.cos.ap-guangzhou.myqcloud.com # 访问域名前缀

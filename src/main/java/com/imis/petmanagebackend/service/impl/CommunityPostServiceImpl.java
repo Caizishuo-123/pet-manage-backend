@@ -52,12 +52,14 @@ public class CommunityPostServiceImpl extends ServiceImpl<CommunityPostMapper, C
             Map<String, Object> map = new HashMap<>();
             map.put("id", post.getId());
             map.put("userId", post.getUserId());
+            map.put("type", post.getType());
             map.put("title", post.getTitle());
             map.put("content", post.getContent());
             map.put("imageUrl", post.getImageUrl());
             map.put("likeCount", post.getLikeCount());
             map.put("status", post.getStatus());
             map.put("createTime", post.getCreateTime());
+            map.put("updateTime", post.getUpdateTime());
 
             User user = userService.getById(post.getUserId());
             map.put("username", user != null ? user.getUsername() : "未知用户");

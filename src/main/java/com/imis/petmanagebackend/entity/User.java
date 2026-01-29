@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * @TableName user
  */
-@TableName(value ="user")
+@TableName(value = "user")
 @Data
 public class User {
     private Long id;
@@ -27,4 +27,9 @@ public class User {
     private Date createTime;
 
     private Date updateTime;
+
+    /**
+     * 默认收货地址
+     */
+    private String address;
 }
